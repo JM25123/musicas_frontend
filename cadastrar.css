@@ -1,0 +1,137 @@
+:root {
+    --ink: #231942;
+    --paper: #f3f0fa;
+    --pink: #d6246e;
+    --pink-dark: #b01c59;
+    --sun: #ffc93c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", system-ui, sans-serif;
+    line-height: 1.5;
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+main {
+    width: calc(100% - 32px);
+    max-width: 520px;
+    margin: 32px auto 64px;
+    padding: 28px;
+    background-color: #ffffff;
+    border: 2px solid var(--ink);
+    border-top: 10px solid var(--pink);
+    border-radius: 14px;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+main > a {
+    display: inline-block;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--pink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+main > a:hover {
+    color: var(--pink-dark);
+}
+
+main > a:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    margin: 20px 0 28px 0;
+    font-family: "Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+/* Disco de vinil ao lado do título */
+h1::before {
+    content: "";
+    flex-shrink: 0;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, var(--sun) 0 14%, #0f0a24 14% 17%, transparent 17%),
+        repeating-radial-gradient(circle, #3a2f6b 0 2px, #1c1540 2px 4px);
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px rgba(214, 36, 110, 0.3);
+}
+
+button {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
+    padding: 14px;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background-color: var(--pink);
+    box-shadow: 4px 4px 0 var(--ink);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--pink-dark);
+}
+
+button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 20px;
+        box-shadow: 4px 4px 0 var(--ink);
+    }
+}
